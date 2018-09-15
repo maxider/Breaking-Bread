@@ -12,7 +12,7 @@ public class Breaking : MonoBehaviour
     public GameObject Jesus;
 
     float speed = 3f;
-    int direction = 1; // 1 = right -1 = left
+    bool right = true;
 
     float rightLimit;
     float leftLimit;
@@ -39,7 +39,7 @@ public class Breaking : MonoBehaviour
         leftHitBoxBounds = (hitBox.transform.position.x - hitBox.transform.localScale.x) * movingThing.transform.parent.transform.localScale.x;
 
         movingThing.transform.position = new Vector2(rightLimit, movingThing.transform.position.y);
-        direction = 1;
+        right = true;
 
         colorTimer = colorDuration;
         originalJesusColor = Jesus.GetComponent<SpriteRenderer>().color;
@@ -52,18 +52,18 @@ public class Breaking : MonoBehaviour
     void Update()
     {
         movingThingPos = movingThing.transform.position;
-        movingThingPos.x += speed * Time.deltaTime * direction;
+        movingThingPos.x += speed * Time.deltaTime * (right ? 1 : -1);
         movingThing.transform.position = movingThingPos;
         if (movingThing.transform.position.x > rightLimit)
         {
-            direction *= -1;
+            right = false;
         }
         else if (movingThing.transform.position.x < leftLimit)
         {
-            direction *= -1;
+            right = true;
         }
 
-        if(isJesusColored)
+        if (isJesusColored)
         {
             colorTimer -= Time.deltaTime;
             if (colorTimer <= 0)
@@ -85,7 +85,7 @@ public class Breaking : MonoBehaviour
         {
             //outside of hitbox logic
             movingThing.transform.position = new Vector2(leftLimit, movingThing.transform.position.y);
-            direction = 1;
+            right = true;
             colorJesus();
             audioSource.Play();
         }
