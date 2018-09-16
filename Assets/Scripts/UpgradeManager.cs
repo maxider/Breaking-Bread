@@ -1,8 +1,8 @@
 ﻿public static class UpgradeManager{
 
-    public static int JuengerCost = 25;
-    public static int MoenchBrokenBreadCost = 50;
-    public static int MoenchJuengerCost = 1;
+    public static int JuengerCost;
+    public static int MoenchBrokenBreadCost;
+    public static int MoenchJuengerCost;
 
     public static void buyJuenger()
     {

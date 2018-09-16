@@ -18,7 +18,8 @@ public class SaveManager : MonoBehaviour
 
     void save()
     {
-        PlayerPrefs.SetInt("BreadAmount", PlayerInfo.BrokenBreadAmount);
+        PlayerPrefs.SetInt("BreadAmount", PlayerInfo.BreadAmount);
+        PlayerPrefs.SetInt("BrokenBreadAmount", PlayerInfo.BrokenBreadAmount);
         PlayerPrefs.SetInt("GoldAmount", PlayerInfo.GoldAmount);
         PlayerPrefs.SetInt("JuengerAmount", PlayerInfo.JuengerAmount);
         PlayerPrefs.SetInt("MoenchAmount", PlayerInfo.MoenchAmount);
@@ -31,7 +32,9 @@ public class SaveManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("BreadAmount"))
         {
-            PlayerInfo.BrokenBreadAmount = PlayerPrefs.GetInt("BreadAmount");
+            PlayerInfo.BreadAmount = PlayerPrefs.GetInt("BreadAmount");
+            PlayerInfo.BrokenBreadAmount = PlayerPrefs.GetInt("BrokenBreadAmount");
+            PlayerInfo.GoldAmount = PlayerPrefs.GetInt("GoldAmount");
             PlayerInfo.JuengerAmount = PlayerPrefs.GetInt("JuengerAmount");
             PlayerInfo.MoenchAmount = PlayerPrefs.GetInt("MoenchAmount");
 

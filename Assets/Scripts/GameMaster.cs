@@ -14,7 +14,7 @@ public class GameMaster : MonoBehaviour {
             counter = 0;
             tick();
         }
-        CostManager.UpdateJuengerCost();
+        CostManager.UpdateCosts();
     }
 
     public void ResetPlayerInfo()

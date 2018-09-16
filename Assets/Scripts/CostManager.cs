@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public static class CostManager
 {
     static int juengerCost = 25;
@@ -9,13 +8,19 @@ public static class CostManager
     static float JuengerMult = 1.3f;
     static float MoenchMult = 1.4f;
 
-    public static void UpdateJuengerCost()
+    static void updateJuengerCost()
     {
         UpgradeManager.JuengerCost = Mathf.RoundToInt(juengerCost * Mathf.Pow(JuengerMult, PlayerInfo.JuengerAmount));
     }
 
-    public static void UpdateMoenchCost()
+    static void updateMoenchCost()
     {
         UpgradeManager.MoenchBrokenBreadCost = Mathf.RoundToInt(moenchCost * Mathf.Pow(MoenchMult, PlayerInfo.MoenchAmount));
+    }
+
+    public static void UpdateCosts()
+    {
+        updateJuengerCost();
+        updateMoenchCost();
     }
 }
