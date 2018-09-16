@@ -4,8 +4,26 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour {
 
-	public void ResetPlayerInfo()
+    float counter = 0;
+
+    void Update()
+    {
+        counter += Time.deltaTime;
+        if (counter >= 1)
+        {
+            counter = 0;
+            tick();
+        }
+        CostManager.UpdateJuengerCost();
+    }
+
+    public void ResetPlayerInfo()
     {
         PlayerInfo.ResetPlayerInfo();
+    }
+
+    void tick()
+    {
+        AutoGenerator.Tick();
     }
 }

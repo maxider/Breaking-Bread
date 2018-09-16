@@ -6,28 +6,17 @@ public class AutoGenerator : MonoBehaviour
 {
     public static int BPS;
 
-    public int JuengerFarmRate = 1;
-    float counter = 0;
+    public static int JuengerFarmRate = 1;
 
-    // Update is called once per frame
-    void Update()
-    {
-        counter += Time.deltaTime;
-        if (counter >= 1)
-        {
-            counter = 0;
-            tick();
-        }
-        updateBPS();
-    }
 
-    void tick()
-    {
-        PlayerInfo.BrokenBreadAmount += BPS;
-    }
-
-    void updateBPS()
+    public static void updateBPS()
     {
         BPS = JuengerFarmRate * PlayerInfo.JuengerAmount;
+    }
+
+    public static void Tick()
+    {
+        updateBPS();
+        PlayerInfo.BrokenBreadAmount += BPS;
     }
 }
