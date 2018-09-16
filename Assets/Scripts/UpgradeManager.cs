@@ -1,7 +1,7 @@
 ﻿public static class UpgradeManager{
 
     public static int JuengerCost = 25;
-    public static int MoenchBreadCost = 50;
+    public static int MoenchBrokenBreadCost = 50;
     public static int MoenchJuengerCost = 1;
 
     public static void buyJuenger()
@@ -15,9 +15,9 @@
 
     public static void buyMoench()
     {
-        if (PlayerInfo.BrokenBreadAmount >= MoenchBreadCost && PlayerInfo.JuengerAmount >= MoenchJuengerCost)
+        if (PlayerInfo.BrokenBreadAmount >= MoenchBrokenBreadCost && PlayerInfo.JuengerAmount >= MoenchJuengerCost)
         {
-            PlayerInfo.BrokenBreadAmount -= MoenchBreadCost;
+            PlayerInfo.BrokenBreadAmount -= MoenchBrokenBreadCost;
             PlayerInfo.JuengerAmount -= MoenchJuengerCost;
             PlayerInfo.MoenchAmount++;
         }

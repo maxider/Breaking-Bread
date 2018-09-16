@@ -19,6 +19,7 @@ public class SaveManager : MonoBehaviour
     void save()
     {
         PlayerPrefs.SetInt("BreadAmount", PlayerInfo.BrokenBreadAmount);
+        PlayerPrefs.SetInt("GoldAmount", PlayerInfo.GoldAmount);
         PlayerPrefs.SetInt("JuengerAmount", PlayerInfo.JuengerAmount);
         PlayerPrefs.SetInt("MoenchAmount", PlayerInfo.MoenchAmount);
 

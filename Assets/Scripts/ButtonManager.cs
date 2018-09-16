@@ -24,6 +24,25 @@ public class ButtonManager : MonoBehaviour
         UpgradeManager.buyMoench();
     }
 
+    public void BuyBread()
+    {
+        if(PlayerInfo.GoldAmount > 0)
+        {
+            PlayerInfo.BreadAmount += 2;
+            PlayerInfo.GoldAmount--;
+        }
+    }
+
+    public void SellBrokenBread()
+    {
+        if(PlayerInfo.BrokenBreadAmount > 0)
+        {
+            PlayerInfo.BrokenBreadAmount--;
+            PlayerInfo.GoldAmount++;
+        }
+    }
+
+
     public void ShopButton()
     {
         if (!shopOpen) //Shop Closed

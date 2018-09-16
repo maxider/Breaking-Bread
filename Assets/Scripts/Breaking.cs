@@ -57,7 +57,11 @@ public class Breaking : MonoBehaviour
         if (movingThing.transform.position.x <= rightHitBoxBounds && movingThing.transform.position.x >= leftHitBoxBounds)
         {
             //insdie hitbox Logic
-            PlayerInfo.BrokenBreadAmount++;
+            if(PlayerInfo.BreadAmount > 0)
+            {
+                PlayerInfo.BreadAmount--;
+                PlayerInfo.BrokenBreadAmount++;
+            }
         }
         else
         {
@@ -97,6 +101,18 @@ public class Breaking : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = 0.3f;
+    }
+
+    public void ToggleAudio()
+    {
+        if (!audioSource.mute)
+        {
+            audioSource.mute = true;
+        }
+        else
+        {
+            audioSource.mute = false;
+        }
     }
 
     void movingThingLogic()

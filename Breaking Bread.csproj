@@ -235,6 +235,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\AutoGenerator.cs" />
     <Compile Include="Assets\Scripts\Breaking.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
